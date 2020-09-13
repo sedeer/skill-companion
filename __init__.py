@@ -8,7 +8,6 @@ class WelcomeHomeSkill(MycroftSkill):
         it cannot utilise MycroftSkill methods as the class does not yet exist.
         """
         super().__init__()
-        self.learning = True
 
     def initialize(self):
         """ Perform any final setup needed for the skill here.
@@ -22,11 +21,11 @@ class WelcomeHomeSkill(MycroftSkill):
         """ Skills can log useful information. These will appear in the CLI and
         the skills.log file."""
         self.log.info("The user is home!")
-        self.speak_dialog("welcome.home", data={"name": user_name})
+        self.speak_dialog("welcome.home")
+#        self.speak_dialog("welcome.home", data={"name": user_name})
 
     def stop(self):
         pass
-
 
 def create_skill():
     return WelcomeHomeSkill()
