@@ -1,0 +1,8 @@
+skillMetadata:
+   sections:
+      - name: User info
+        fields:
+          - name: user_name
+            type: text
+            label: User's name (for greetings)
+            value:  
