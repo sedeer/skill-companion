@@ -23,6 +23,13 @@ class WelcomeHomeSkill(MycroftSkill):
         self.log.info("%s is home!" % self.user )
         self.speak_dialog("welcome.home", data={'user': self.user})
 
+    @intent_handler(IntentBuilder('GoodbyeIntent').require('Leaving'))
+    def handle_goodbye_intent(self, message):
+        """ Skills can log useful information. These will appear in the CLI and
+        the skills.log file."""
+        self.log.info("%s is leaving!" % self.user )
+        self.speak_dialog("leaving", data={'user': self.user})
+
     def stop(self):
         pass
 
