@@ -4,6 +4,6 @@ It's good to see you again
 I'm glad you're home
 It's good to have you home again
 Hi! I missed you!
-Hi, {{user}}
-Welcome back {{user}}
-Welcome home {{user}}
+Hi, {user}
+Welcome back {user}
+Welcome home {user}
