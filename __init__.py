@@ -1,5 +1,6 @@
 from adapt.intent import IntentBuilder
 from mycroft import MycroftSkill, intent_handler
+import random
 
 class CompanionSkill(MycroftSkill):
     def __init__(self):
@@ -8,6 +9,7 @@ class CompanionSkill(MycroftSkill):
         it cannot utilise MycroftSkill methods as the class does not yet exist.
         """
         super().__init__()
+        random.seed()
 
     def initialize(self):
         """ Perform any final setup needed for the skill here.
@@ -29,6 +31,22 @@ class CompanionSkill(MycroftSkill):
         the skills.log file."""
         self.log.info("%s is leaving!" % self.user )
         self.speak_dialog("leaving", data={'user': self.user})
+
+    @intent_handler(IntentBuilder('GoodnightIntent').require('GoodNight'))
+    def handle_goodnight_intent(self, message):
+        """ Skills can log useful information. These will appear in the CLI and
+        the skills.log file."""
+        self.log.info("%s is going to sleep!" % self.user )
+        self.speak_dialog("goodnight", data={'user': self.user})
+
+    @intent_handler(IntentBuilder('GoodmorningIntent').require('GoodMorning'))
+    def handle_goodmorning_intent(self, message):
+        """ Skills can log useful information. These will appear in the CLI and
+        the skills.log file."""
+        self.log.info("%s is awake!" % self.user )
+        self.speak_dialog("goodmorning", data={'user': self.user})
+        if random.random() >= 0.5:
+            self.speak_dialog("startday")
 
     def stop(self):
         pass
