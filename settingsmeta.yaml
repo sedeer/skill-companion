@@ -2,7 +2,7 @@ skillMetadata:
    sections:
       - name: User info
         fields:
-          - name: user_name
+          - name: user
             type: text
-            label: User's name (for greetings)
+            label: Your name
             value: "my friend" 
