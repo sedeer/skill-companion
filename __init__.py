@@ -20,7 +20,7 @@ class WelcomeHomeSkill(MycroftSkill):
     def handle_welcome_home_intent(self, message):
         """ Skills can log useful information. These will appear in the CLI and
         the skills.log file."""
-        self.log.info(user + " is home!")
+        self.log.info("%s is home!" % user)
         self.speak_dialog("welcome.home", data={'user': user})
 
     def stop(self):
