@@ -5,4 +5,4 @@ skillMetadata:
           - name: user_name
             type: text
             label: User's name (for greetings)
-            value:  
+            value: "my friend" 
