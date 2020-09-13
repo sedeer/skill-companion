@@ -16,7 +16,7 @@ class WelcomeHomeSkill(MycroftSkill):
         settings will be available."""
         user_name = self.settings.get('user_name')
 
-    @intent_handler(IntentBuilder('WelcomeHomeIntent').require('WelcomeHomeKeyword'))
+    @intent_handler(IntentBuilder('WelcomeHomeIntent').require('WelcomeHome'))
     def handle_welcome_home_intent(self, message):
         """ Skills can log useful information. These will appear in the CLI and
         the skills.log file."""
