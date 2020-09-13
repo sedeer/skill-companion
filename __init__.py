@@ -34,4 +34,4 @@ class CompanionSkill(MycroftSkill):
         pass
 
 def create_skill():
-    return WelcomeHomeSkill()
+    return CompanionSkill()
