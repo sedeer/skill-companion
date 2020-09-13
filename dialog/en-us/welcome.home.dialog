@@ -2,8 +2,9 @@ Welcome back
 Welcome home
 It's good to see you again
 I'm glad you're home
+I'm glad you're home {user}
 It's good to have you home again
-Hi! I missed you!
-Hi, {user}
+Welcome home {user}! I missed you!
+High, {user}
 Welcome back {user}
 Welcome home {user}
