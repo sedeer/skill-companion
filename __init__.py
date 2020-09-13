@@ -14,6 +14,7 @@ class WelcomeHomeSkill(MycroftSkill):
         This function is invoked after the skill is fully constructed and
         registered with the system. Intents will be registered and Skill
         settings will be available."""
+        pass
 
     @intent_handler(IntentBuilder('WelcomeHomeIntent').require('WelcomeHome'))
     def handle_welcome_home_intent(self, message):
