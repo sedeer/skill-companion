@@ -14,15 +14,14 @@ class WelcomeHomeSkill(MycroftSkill):
         This function is invoked after the skill is fully constructed and
         registered with the system. Intents will be registered and Skill
         settings will be available."""
-        pass
+        user_name = self.settings.get('user')
 
     @intent_handler(IntentBuilder('WelcomeHomeIntent').require('WelcomeHome'))
     def handle_welcome_home_intent(self, message):
         """ Skills can log useful information. These will appear in the CLI and
         the skills.log file."""
-        self.speak_dialog("hello again")
-#        self.log.info("%s is home!" % self.settings.get('user') )
-#        self.speak_dialog("welcome.home", data={'user': self.settings.get('user')})
+        self.log.info("%s is home!" % self.settings.get('user') )
+        self.speak_dialog("welcome.home", data={'user': self.settings.get('user')})
 
     def stop(self):
         pass
